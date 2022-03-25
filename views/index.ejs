@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="outside-container">
+        <div class="user-input">
+            <div class="container">
+                <h1>Find the Weather</h1>
+    
+                <form action="/" method="POST">
+                    <input type="text" name="city" placeholder="Enter the city" class="input-box">
+                    <input type="submit" value="Display Weather" class="btn">
+                </form>           
+            </div>
+    
+            <div class="output">
+                <div class="city"><%= weather_curr[0].city %></div>
+                <% if(weather_curr[0].icon !== null){ %>
+                    <img src="http://openweathermap.org/img/w/<%= weather_curr[0].icon %>.png" alt="Weather-Icon" class="icon">
+                    <div class="temperature"><%= weather_curr[0].temp %> <sup>o</sup>C <%= weather_curr[0].description %></div>
+                <% } %>
+                
+                
+            </div>
+    
+        </div>
+    </div>
+    
+</body>
+</html>
